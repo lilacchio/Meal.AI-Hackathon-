@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% block content %}
+<div>
+
+
+{% for meal in meals %}
+<div style="padding: 5%; border: 2px solid #1c75bc;">
+    <p>{{meal.content}}</p>
+    <p>{{meal.bmi}}</p>
+    <p>{{meal.budget}}</p>
+    <p>{{meal.location}}</p>
+    <p>{{meal.created}}</p>
+</div>
+<br />
+{% endfor %}
+</div>
+{% endblock %}
+

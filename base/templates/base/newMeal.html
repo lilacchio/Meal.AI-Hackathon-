@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="container py-4">
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Customized MealPlans</h1>
+        <p class="col-md-8 fs-4">{{meal.content}}</p>
+        <a href="/usermeals" class="btn btn-primary btn-lg" type="button">View All MealPlans</a>
+      </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-bg-light rounded-3">
+          <h2>Regenerate</h2>
+          <p>Not satisfied with your mealplan? Changed your mind of budgets? Regerate it again.</p>
+          <a href="{% url 'home' %}" class="btn btn-outline-secondary" type="button">Regenerate</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>Sustainable Future</h2>
+          <p>Wondering how your dietary impact the world? Here's an in depth report.</p>
+          <a href="/impact" class="btn btn-outline-secondary" type="button">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pt-3 mt-4 text-muted border-top">
+      &copy; 2022
+    </footer>
+  </div>
+
+{% endblock content %}

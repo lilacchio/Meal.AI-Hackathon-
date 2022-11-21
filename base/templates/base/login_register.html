@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center><img src="https://firebasestorage.googleapis.com/v0/b/meal-planner-c993e.appspot.com/o/static%2Fimg%2Fmeal-planning-icon%20(1).png?alt=media&token=149571f4-c4df-486e-a9ec-a2931e955114" style="padding-top: 5%;"/></center>
+{% if page == 'loginP' %}
+<div style="padding-left: 25%; padding-right: 25%; padding-top:5%; align-items:center;"> 
+    <form class="form-signin" method="POST" action="">
+        {% csrf_token %}
+        <div class="form-outline mb-4">
+            <input type="text" name="username" placeholder="Username" class="form-control" required autofocus/>
+            <!-- <label class="form-label" for="form1Example1">Username</label> -->
+        </div>
+        <div class="form-outline mb-4">
+            <input type="password" name="password" placeholder="Password" class="form-control" />
+            <!-- <label class="form-label" for="form1Example1">Password</label> -->
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        <!--<legend>Username: </legend>
+        <input type="text" name="username" placeholder="Enter the username" />
+        <legend>Password: </legend>
+        <input type="password" name="password" placeholder="Enter the password" />
+        <input type="submit" value="Login" />-->
+    </form>
+    <div class="col">
+        <!-- Simple link -->
+        <center><a href="{% url 'register' %}">Don't have an account?</a></center>
+      </div>
+</div>
+{% else %}
+<center><form method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Register" />
+</form>
+<a href="{% url 'login' %}">Already have an account?</a></center>
+{% endif %}
+{% endblock content %}
