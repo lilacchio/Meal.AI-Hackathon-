@@ -9,7 +9,7 @@ It is difficult to find a meal plan that fits all the criteria of being healthy,
 3. Run the server using py manage.py runserver
 
 ## Contributors:
-Sakil
+Sakil,
 Ripjeet
 
 ## Project:
